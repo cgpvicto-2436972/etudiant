@@ -18,7 +18,7 @@
         {
             Nom = nom;
             Prenom = prenom;
-            _diplome = false;
+            Diplome = false;
         }
 
         /// <summary>
@@ -53,6 +53,7 @@
         public bool Diplome 
         {
             get { return _diplome; }
+            private set { _diplome = value; }
         }
     }
 }
