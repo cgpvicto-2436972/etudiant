@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="biblioclasse/biblioclasse.csproj" />
+  <Project Path="Projet Console/Projet Console.csproj" />
+</Solution>
