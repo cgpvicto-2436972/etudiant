@@ -24,11 +24,11 @@
         /// <summary>
         /// Diplome un élève
         /// </summary>
-        /// <returns>si il est diplomer ou non</returns>
+        /// <returns>retourne l'attribut diplomer</returns>
         public bool Diplomer()
         {
-            _diplome = true;
-            return true;
+            Diplome = true;
+            return _diplome;
         }
 
         /// <summary>
@@ -37,7 +37,13 @@
         public string Nom 
         {
             get { return _nom; }
-            private set { _nom = value; }
+            private set 
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentException("Le nom est vide ou contient uniquement des espaces blancs");
+
+                _nom = value; 
+            }
         }
         /// <summary>
         /// accesseur du prenom
@@ -45,7 +51,13 @@
         public string Prenom 
         {
             get { return _prenom; }
-            private set { _prenom = value; }
+            private set 
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentException("Le prenom est vide ou contient uniquement des espaces blancs");
+
+                _prenom = value; 
+            }
         }
         /// <summary>
         /// accesseur du diplome
@@ -53,7 +65,10 @@
         public bool Diplome 
         {
             get { return _diplome; }
-            private set { _diplome = value; }
+            private set 
+            { 
+                _diplome = value; 
+            }
         }
     }
 }
